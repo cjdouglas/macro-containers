@@ -1,0 +1,35 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "build",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/build"
+    },
+    {
+      "name": "mc-test",
+      "hidden": true,
+      "cacheVariables": {
+        "MC_BUILD_TESTS": "ON"
+      }
+    },
+    {
+      "name": "env-linux",
+      "hidden": true,
+      "generator": "Unix Makefiles",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "name": "linux-dev",
+      "displayName": "Linux Dev",
+      "inherits": ["build", "mc-test", "env-linux"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    }
+  ]
+}

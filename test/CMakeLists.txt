@@ -1,0 +1,2 @@
+add_executable(macro_containers_test test_runner.c test_fwd_list.c)
+target_link_libraries(macro_containers_test PRIVATE macro_containers unity)
