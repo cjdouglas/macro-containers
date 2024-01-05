@@ -24,9 +24,27 @@
       }
     },
     {
+      "name": "env-darwin",
+      "hidden": true,
+      "generator": "Unix Makefiles",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Darwin"
+      }
+    },
+    {
       "name": "linux-dev",
       "displayName": "Linux Dev",
       "inherits": ["build", "mc-test", "env-linux"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "darwin-dev",
+      "displayName": "Darwin Dev",
+      "inherits": ["build", "mc-test", "env-darwin"],
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug"
       }

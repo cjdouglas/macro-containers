@@ -20,17 +20,17 @@ TEST_TEAR_DOWN(FWD_LIST_TEST_GROUP) {}
 TEST(FWD_LIST_TEST_GROUP, TEST_FWD_LIST_INIT) {
   struct fwd_list_int list_int;
   fwd_list_int_init(&list_int, compare_int);
-  TEST_ASSERT_EQUAL(list_int.size, 0);
+  TEST_ASSERT_EQUAL(fwd_list_int_size(&list_int), 0);
   fwd_list_int_free(&list_int);
 
   struct fwd_list_simple list_simple;
   fwd_list_simple_init(&list_simple, compare_simple);
-  TEST_ASSERT_EQUAL(list_simple.size, 0);
+  TEST_ASSERT_EQUAL(fwd_list_simple_size(&list_simple), 0);
   fwd_list_simple_free(&list_simple);
 
   struct fwd_list_complex list_complex;
   fwd_list_complex_init(&list_complex, compare_complex);
-  TEST_ASSERT_EQUAL(list_complex.size, 0);
+  TEST_ASSERT_EQUAL(fwd_list_complex_size(&list_complex), 0);
   fwd_list_complex_free(&list_complex);
 }
 
